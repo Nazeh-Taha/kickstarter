@@ -11,13 +11,21 @@
 width: 100%;
 margin-top: 50px;
 margin-bottom: 80px;
+display: flex;
+flex-wrap: wrap;
 }
 .slider img {
     height: 165px;
     max-width: 100%;
+    width: 100%;
 }
-
-
+.slider-unit-2{
+  width: 20%;
+  margin-bottom: 50px;
+}
+.slider-unit-2 a{ 
+text-decoration: none;
+}
 .slider-unit-2 div{
     margin: 0 4px;
 }
@@ -36,14 +44,15 @@ margin-bottom: 80px;
     font-size: 14px;
     font-weight: 100;
     line-height: 1.4rem;
+    color: #282828;
 }
 
-.mark-div {
+.marko-div {
     height: 12px;
     background-color: #037362;
     position: relative;
     top: -3px;
-    width: 97%;
+    
 }
 .by-div{
     display: inline-flex;

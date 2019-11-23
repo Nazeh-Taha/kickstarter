@@ -18,9 +18,11 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = { 
-      articls:[]
+      articls: []
      }
-}
+    
+  }
+  
 
 componentDidMount(){
   this.retriveData();
@@ -37,10 +39,8 @@ updateState(data){
 retriveData(){
   
   var that = this;
-  //var path = window.location.href.split("=");
-  //var article_id = path[1];
   $.ajax({
-    url: "/",
+    url: "http://localhost:8000",
     method: "GET",
     success: function(data){
       that.updateState(data)
@@ -54,14 +54,15 @@ retriveData(){
 
 render() {
   return (
-    <Router>
+    
     <div className="App">
+      <Router>
     <Switch>
     <Route exact path="/">
       <Nav />
-      <Recommend />
+      <Recommend article = {this.state.articls}/>
       <OneTopic />
-      <SliderPart articls ={this.state.articls}/>
+      <SliderPart article = {this.state.articls}/>
       </Route>
       <Route exact path="/login">
         <Login />
@@ -70,8 +71,9 @@ render() {
       <Signup />
       </Route>
       </Switch>
+      </Router>
     </div>
-    </Router>
+    
   );
 }
 }
